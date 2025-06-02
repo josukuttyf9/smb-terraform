@@ -2,7 +2,7 @@ terraform {
 
   backend "s3" {
     bucket         = "f9smb-terraform-backend"  
-    key            = "./terraform.tfstate"     
+    key            = "terraform.tfstate"     
     region         = "me-central-1"
   }
 
