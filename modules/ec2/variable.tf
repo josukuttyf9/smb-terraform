@@ -12,7 +12,7 @@ variable "my_ip" {
 resource "aws_security_group" "private_sg" {
   name        = "private-sg"
   description = "Allow SSH"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 22
@@ -27,4 +27,13 @@ resource "aws_security_group" "private_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+variable "vpc_id" {
+  description = "The ID of the VPC"
+  type        = string
+}
+
+variable "private_subnet_ids" {
+  description = "List of private subnet IDs"
+  type        = string
 }

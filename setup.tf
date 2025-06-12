@@ -2,8 +2,9 @@ terraform {
 
   backend "s3" {
     bucket         = "f9smb-terraform-backend"  
-    key            = "./terraform.tfstate"     
+    key            = "anna/terraform.tfstate"     
     region         = "me-central-1"
+    profile = "smb-main"
   }
 
   required_providers {
@@ -16,5 +17,5 @@ terraform {
 
 provider "aws" {
   region = "me-central-1"
-  profile = var.profile
+  profile = var.aws_profile
 }
