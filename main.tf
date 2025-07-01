@@ -14,6 +14,9 @@ module "ec2" {
   vpc_id              = module.vpc.vpc_id
   private_subnet_ids  = module.vpc.private_subnet_ids[0]
   my_ip               = var.my_ip
+  ami_id = var.ami_id
+
+
 }
 module "ALB" {
   source            = "./modules/ALB"
